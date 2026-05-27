@@ -1,6 +1,6 @@
 [package]
 name = "wrapc"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Ivan Chetchasov <vi.is.chapmann@gmail.com>"]
 description = "A zero-fuss parser for rustc arguments, designed for RUSTC_WRAPPER tools"
@@ -11,7 +11,7 @@ keywords = ["rustc", "wrapper", "parser", "build", "tool"]
 categories = ["development-tools", "command-line-interface"]
 
 [dependencies]
-clap = { version = "4.5", features = ["derive"] }
+# we don't use `clap` according to quite complex logic of `rustc`'s CLI.
 thiserror = "1.0"
 
 [lib]

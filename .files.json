@@ -1,0 +1,7 @@
+{
+    "ignore_patterns": [
+        "target",
+        "Cargo.lock",
+        "cargo.lock"
+    ]
+}
