@@ -30,7 +30,7 @@ jobs:
       - name: Validate tag vs manifest
         run: |
           TAG="${GITHUB_REF#refs/tags/v}"
-          MANIFEST=$(cd wrapc && grep '^version =' Cargo.toml | head -1 | cut -d'"' -f2)
+          MANIFEST=$(grep '^version =' Cargo.toml | head -1 | cut -d'"' -f2)
           if [ "$TAG" != "$MANIFEST" ]; then
             echo "::error::Tag $TAG != Cargo.toml version $MANIFEST"
             exit 1
@@ -41,7 +41,7 @@ jobs:
         run: just ci
 
       - name: Publish to crates.io
-        run: cd wrapc && cargo publish --token "${{ secrets.CRATES_IO_TOKEN }}"
+        run: cargo publish --token "${{ secrets.CRATES_IO_TOKEN }}"
 
       - name: Wait for index (optional)
         run: sleep 30
