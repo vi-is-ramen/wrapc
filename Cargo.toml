@@ -1,6 +1,6 @@
 [package]
 name = "wrapc"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2024"
 authors = ["Ivan Chetchasov <vi.is.chapmann@gmail.com>"]
 description = "A zero-fuss, type-safe parser for rustc arguments, designed for RUSTC_WRAPPER tools"
