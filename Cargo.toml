@@ -1,23 +1,23 @@
 [package]
 name = "wrapc"
-version = "0.1.2"
-edition = "2021"
+version = "0.1.4"
+edition = "2024"
 authors = ["Ivan Chetchasov <vi.is.chapmann@gmail.com>"]
-description = "A zero-fuss parser for rustc arguments, designed for RUSTC_WRAPPER tools"
-license = "MIT"
-repository = "https://gitlab.com/viraven/wrapc"
-documentation = "https://docs.rs/wrapc"
+description = "A zero-fuss, type-safe parser for rustc arguments, designed for RUSTC_WRAPPER tools"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/vi-is-ramen/wrapc"
+documentation = "https://vi-is-ramen.github.io/book/en/wrapc"
 keywords = ["rustc", "wrapper", "parser", "build", "tool"]
 categories = ["development-tools", "command-line-interface"]
 readme = "README.md"
 
 [dependencies]
-# we don't use `clap` according to quite complex logic of `rustc`'s CLI.
-thiserror = "1.0"
+thiserror = "2.0"
 
 [lib]
 name = "wrapc"
 path = "src/lib.rs"
 
-[badges]
-gitlab = { repository = "viraven/wrapc" }
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
