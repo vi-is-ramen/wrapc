@@ -5,7 +5,7 @@ use thiserror::Error;
 pub enum ParseError {
     #[error("missing value for argument `{0}`")]
     MissingValue(String),
-    
+
     #[error("unknown parse error")]
     Unknown,
 }
